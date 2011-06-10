@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Cookie MQ</title>
+	<script type="text/javascript" src="../cookiemq.js"></script>
+	<script>
+		var broadcastMessage = function(msg){
+			cookiemq.push('default', msg);
+			return false;
+		};
+	</script>
+  </head>
+  <body>
+  
+	<a href="#" onclick="window.open('popup.html','mywin', 'width=600,height=400').focus();return false;">Open Listening Window</a>
+	
+	<br/><br/>
+	
+	<form name="test" onSubmit="return broadcastMessage(this.msg.value);">
+		<input type="text" name="msg" id="msg" />
+		<input type="submit" />
+	</form>
+	
+  </body>
+</html>

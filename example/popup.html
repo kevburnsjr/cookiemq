@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Cookie MQ Listener</title>
+	<script type="text/javascript" src="../cookiemq.js"></script>
+  </head>
+  <body>
+	
+	<h1>COOKIE</h1>
+	
+	<p id="msg"></p>
+	
+	<script>
+		var updateAndClear = function(msg) {
+			document.getElementById('msg').innerHTML = msg;
+			cookiemq.clear('default');
+		};
+		cookiemq.listen('default', updateAndClear);
+	</script>
+	
+  </body>
+</html>
